@@ -21,10 +21,3 @@
 
 
 --- 
-
-## 간단한 클래스
-
-- ChangesModule
-- ChangesModule#withDraw(Money)
-- Coin(500원, 100원, 50원, 10원)
-- Change
