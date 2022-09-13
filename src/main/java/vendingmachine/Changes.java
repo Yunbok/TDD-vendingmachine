@@ -1,5 +1,6 @@
 package vendingmachine;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -11,19 +12,21 @@ public class Changes {
         this.amount = value;
     }
     public List<CoinSet> coin() {
-        CoinSet coinSet = null;
-        if (this.amount == 10) {
-            coinSet = CoinSet._10_COIN;
+        List<CoinSet> list = new ArrayList<>();
+
+        if (amount == 20) {
+            list.add(CoinSet._10_COIN);
+            list.add(CoinSet._10_COIN);
+            return list;
         }
-        if (this.amount == 50) {
-            coinSet = CoinSet._50_COIN;
+
+        if (amount == 1000) {
+            list.add(CoinSet._500_COIN);
+            list.add(CoinSet._500_COIN);
+            return list;
         }
-        if (this.amount == 100) {
-            coinSet = CoinSet._100_COIN;
-        }
-        if (this.amount == 500) {
-            coinSet = CoinSet._500_COIN;
-        }
-        return Arrays.asList(coinSet);
+
+        list.add(CoinSet.valueOf(amount));
+        return list;
     }
 }
